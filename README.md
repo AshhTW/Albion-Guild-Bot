@@ -17,6 +17,7 @@
   - `DISCORD_TOKEN`
   - `DISCORD_CLIENT_ID`
   - `DISCORD_GUILD_ID`
+  - `CHANNEL_CATEGORY_NAME` (用以設定機器人僅允許在該類別的頻道中使用,如不需要此功能則留白)
 - 註冊 Slash 指令: `node register-commands.js`
 - 啟動 Bot: `npm start`
 

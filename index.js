@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 
 const TOKEN = process.env.DISCORD_TOKEN;
+const CHANNEL_CATEGORY_NAME = (process.env.CHANNEL_CATEGORY_NAME || '').trim() || null;
 const DATA_FILE = path.resolve('./silver_data.json');
 
 function loadData() {
@@ -105,12 +106,14 @@ client.on(Events.InteractionCreate, async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
   const channel = interaction.channel;
-  if (!channel || !channel.parent || channel.parent.name !== '分錢仔') {
-    await interaction.reply({
-      content: '此指令限定在類別"分錢"內的頻道使用',
-      ephemeral: true
-    });
-    return;
+  if (CHANNEL_CATEGORY_NAME) {
+    if (!channel || !channel.parent || channel.parent.name !== CHANNEL_CATEGORY_NAME) {
+      await interaction.reply({
+        content: `此指令限定在類別"${CHANNEL_CATEGORY_NAME}"內的頻道使用`,
+        ephemeral: true
+      });
+      return;
+    }
   }
 
   if (interaction.commandName === 'split') {
