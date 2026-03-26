@@ -3,13 +3,12 @@
 - 一個為 Albion Online 公會設計的 Discord Bot 用來管理公會財務和出團loot結算.
 - 此機器人模仿公會 "Journey Uncharted" 的分錢仔進行製作.
 - 皆以圖片方式顯示輸出 十分檢而易懂 取代攏長又難懂的文字顯示.
-- 只花費約 3h 製作, 如有bug請開issue反應.
+- 只花費約 3h 製作...
 - 如有不適當或更多需求製作請聯繫discord: ashaintyou
 
 ### 環境需求
 
 - Node.js 18+
-- npm
 
 ### 部署方式
 
@@ -18,8 +17,6 @@
   - `DISCORD_CLIENT_ID`
   - `DISCORD_GUILD_ID`
   - `CHANNEL_CATEGORY_NAME` (用以設定機器人僅允許在該類別名稱的頻道中使用,如不需要此功能則留白)
-- 註冊 Slash 指令: `node register-commands.js`
-- 啟動 Bot: `npm start`
 
 ---
 
